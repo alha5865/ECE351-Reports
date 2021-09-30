@@ -1,0 +1,136 @@
+\documentclass[11pt]{article}
+\usepackage{amsmath, amssymb, amscd, amsthm, amsfonts}
+\usepackage{graphicx}
+\usepackage{pdfpages}
+\usepackage{hyperref}
+\usepackage{amsmath}
+\oddsidemargin 0pt
+\evensidemargin 0pt
+\marginparwidth 40pt
+\marginparsep 10pt
+\topmargin -20pt
+\headsep 10pt
+\textheight 8.7in
+\textwidth 6.65in
+\linespread{1.2}
+
+\title{Lab 4}
+\author{ECE 351-52}
+\author{Meshari Alhajeri}
+\date{9/30/2021}
+
+\usepackage{listings}
+\usepackage{xcolor}
+
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+\lstdefinestyle{mystyle}{
+backgroundcolor=\color{backcolour}, 
+commentstyle=\color{codegreen},
+keywordstyle=\color{magenta},
+numberstyle=\tiny\color{codegray},
+stringstyle=\color{codepurple},
+basicstyle=\ttfamily\footnotesize,
+breakatwhitespace=false, 
+breaklines=true, 
+captionpos=b, 
+keepspaces=true, 
+numbers=left, 
+numbersep=5pt, 
+showspaces=false, 
+showstringspaces=false,
+showtabs=false, 
+tabsize=2
+}
+
+\lstset{style=mystyle}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{conjecture}[theorem]{Conjecture}
+
+\newcommand{\rr}{\mathbb{R}}
+
+\newcommand{\al}{\alpha}
+\DeclareMathOperator{\conv}{conv}
+\DeclareMathOperator{\aff}{aff}
+
+\begin{document}
+
+\maketitle
+
+
+
+\section{Introduction}\label{section-introduction}
+
+The purpose of this lab was to familiarize students with the step response calculation using python. In this lab we used lab 3 convolution function to find step response of function, first the functions were made using user defined functions and step function from lab 2.% If we denote by $\conv(S)$ the convex hull of a set $S \subset \rr^d$, it says the following
+
+\section{Methodology :}\label{section-introduction}
+
+\subsection{Part 1 :}
+{\bf Task 1 : }
+
+
+\begin{lstlisting}[language=Python, caption=Part 1(Task 1)]
+def f1(time,signal) :
+stepfunc(time,signal,0, 1)
+stepfunc(time,signal,3, -1)
+signal_ = np.exp(-2*time)
+signal = np.multiply(signal_,signal)
+return signal
+def f2(time,signal) :
+stepfunc(time,signal,2, 1)
+stepfunc(time,signal,6, -1)
+# signal_ = np.exp(-time)
+# signal = np.multiply(signal_,signal)
+return signal
+def f3(time,signal) :
+ramp_func(time,signal,2,1)
+f = 2*0.25*22/7
+signal = np.cos(f*signal)
+return signal
+\end{lstlisting}
+
+{\bf Explanation : }
+\\In this part of the code, we developed the user defined functions for creating the signals defined in the lab report, to create these functions I used the step function from lab 3 and additionally I used exp() function from Numpy module of python. 
+In the task 2 we used the pre-defined functions from task 1 to plot the signals genrated, the xlmimt of the plot was set to $-10 \geq x \leq 10.$
+
+\section{Results : }
+
+\subsection{Part 1 :}
+{\bf Task 2}
+
+\centerline{\includegraphics[scale=0.7]{01.png}}
+\centerline{caption{Plots of the functions}}
+\label{fig:my_label}
+\subsection{Part 2 :}
+{\bf Task 2}
+
+
+
+\centerline{\includegraphics[scale=0.7]{02.png}}
+\centerline{caption{code generated response}}
+\label{fig:my_label}
+
+{\bf Task 2(Hand written solution)}
+
+\centerline{\includegraphics[scale=0.7]{03.png}}
+\centerline{caption{step response calculated by hand}}
+\label{fig:my_label} 
+
+
+
+
+
+\section{Questions : }
+
+{\bf Feedback :}
+\\The lab tasks were properly explained and the deliverable section is very helpful to know that what should be included in the lab report.
+
+
+\section{Conclusion : }
+In this lab we learned how to find unit step response of a function using convolution, we also compared the solution with the hand calculated solution.
+
+\end{document}
