@@ -1,0 +1,119 @@
+\documentclass[11pt]{article}
+\usepackage{amsmath, amssymb, amscd, amsthm, amsfonts}
+\usepackage{graphicx}
+\usepackage{pdfpages}
+\usepackage{hyperref}
+\usepackage{amsmath}
+\oddsidemargin 0pt
+\evensidemargin 0pt
+\marginparwidth 40pt
+\marginparsep 10pt
+\topmargin -20pt
+\headsep 10pt
+\textheight 8.7in
+\textwidth 6.65in
+\linespread{1.2}
+\usepackage[latin1]{inputenc}
+\title{Lab 5}
+\author{ECE 351-52}
+\author{Meshari Alhajeri}
+\date{10/06/2021}
+
+\usepackage{listings}
+\usepackage{xcolor}
+
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+\lstdefinestyle{mystyle}{
+backgroundcolor=\color{backcolour}, 
+commentstyle=\color{codegreen},
+keywordstyle=\color{magenta},
+numberstyle=\tiny\color{codegray},
+stringstyle=\color{codepurple},
+basicstyle=\ttfamily\footnotesize,
+breakatwhitespace=false, 
+breaklines=true, 
+captionpos=b, 
+keepspaces=true, 
+numbers=left, 
+numbersep=5pt, 
+showspaces=false, 
+showstringspaces=false,
+showtabs=false, 
+tabsize=2
+}
+
+
+\usepackage{steinmetz}
+\lstset{style=mystyle}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{conjecture}[theorem]{Conjecture}
+
+\newcommand{\rr}{\mathbb{R}}
+
+\newcommand{\al}{\alpha}
+\DeclareMathOperator{\conv}{conv}
+\DeclareMathOperator{\aff}{aff}
+
+\begin{document}
+
+\maketitle
+\section{Introduction :}
+In this lab we learned how to use python's scipy library to compute the impulse and the step function of a transfer function. We also learned the relationship between impulse response and the final value of the function. 
+
+\section{Data :}
+
+
+\textbf{Task 1 :}
+\begin{center}
+\includegraphics[scale=0.7]{Figure_1.png}
+\end{center}
+
+\textbf{Task 1 part 2 :}
+\begin{center}
+\includegraphics[scale=0.7]{Figure_3.png}
+\end{center}
+\section{Equations Used :}\label{section-introduction}
+\subsection{Part 2 :}
+\subsubsection{Task 2 :}
+In prelab we calculated H(s) which is given below : 
+\begin{align}
+\\H(s) =\frac{(10^4)s}{s^2 +{(10^{4})s}+{37.4\times(10^{6})}}
+\end{align}
+Transfer function is defined as :
+\begin{align*}
+H(s)=\frac{Y(s)}{X(s)}
+\end{align*}
+
+the output with zero initial conditions (i.e., the zero state output) is simply given by
+\begin{align*}Y(s)=X(s).H(s)\end{align*}
+so for the unit step response $X(s) = \frac{1}{s}$, Y(s), is given by :
+\begin{align*}Y(s)=\frac{1}{s}.H(s)
+\\lim_{t \to \infty}y(t)=lim_{s\to0}(s.Y(s))=lim_{s\to0}(s.\frac{1}{s}.H(s))=lim_{s\to 0}(H(s))
+\end{align*}
+Taking value of $H(s)$ from equation(1).
+
+\begin{align*}
+lim_{s\to 0}(H(s)) = lim_{s\to 0}\frac{(10^4)s}{s^2 +{(10^{4})s}+{37.4\times(10^{6})}}
+\\lim_{s\to 0}H(s) = \frac{(10^4)(0)}{(0)^2 +{(10^{4})(0)}+{37.4\times(10^{6})}}
+\\lim_{t \to \infty}y(t)=lim_{s\to 0}H(s) = 0
+\end{align*}
+\subsubsection{Task 3 :}
+\textbf{Answer :}
+\\The final value theorem suggest that after infinite amount of time the output of the system become zero, similarly when we plot the impulse response of the system the output of the system oscillates around the time axis and then collapses to zero, which emphasizes our finding in the second task.So our result completely makes sense as $t \to \infty$ the output slowly becomes zero. As $t=\infty$ inductor become a perfect conductor offering no resistance to the flow of charges thus voltage across it will drop to zero. 
+
+\section{Questions :}
+{\subsection{Question no 1 :} }
+
+\textbf{Answer :} 
+\\Final value theorem explain how the damping affect works(i.e., how the system energy stored in the different energy storing components(e.g, capacitor and inductor) finally reduces to zero with the passage of time), when current is repeatedly flown to and fro between circuit elements they start loosing energy and finally it becomes zero.
+
+{\subsection{Question no 2 :} }
+\textbf{Answer :}
+\\Lab was well explained and understandable.
+
+\end{document}
