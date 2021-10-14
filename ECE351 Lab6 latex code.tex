@@ -1,0 +1,129 @@
+\documentclass[11pt]{article}
+\usepackage{amsmath, amssymb, amscd, amsthm, amsfonts}
+\usepackage{graphicx}
+\usepackage{pdfpages}
+\usepackage{hyperref}
+\usepackage{amsmath}
+\oddsidemargin 0pt
+\evensidemargin 0pt
+\marginparwidth 40pt
+\marginparsep 10pt
+\topmargin -20pt
+\headsep 10pt
+\textheight 8.7in
+\textwidth 6.65in
+\linespread{1.2}
+\usepackage[latin1]{inputenc}
+\title{Lab 6}
+\author{ECE 351-52}
+\author{Meshari Alhajeri}
+\date{10/14/2021}
+
+\usepackage{listings}
+\usepackage{xcolor}
+
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+\lstdefinestyle{mystyle}{
+backgroundcolor=\color{backcolour}, 
+commentstyle=\color{codegreen},
+keywordstyle=\color{magenta},
+numberstyle=\tiny\color{codegray},
+stringstyle=\color{codepurple},
+basicstyle=\ttfamily\footnotesize,
+breakatwhitespace=false, 
+breaklines=true, 
+captionpos=b, 
+keepspaces=true, 
+numbers=left, 
+numbersep=5pt, 
+showspaces=false, 
+showstringspaces=false,
+showtabs=false, 
+tabsize=2
+}
+
+
+\usepackage{steinmetz}
+\lstset{style=mystyle}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{conjecture}[theorem]{Conjecture}
+
+\newcommand{\rr}{\mathbb{R}}
+
+\newcommand{\al}{\alpha}
+\DeclareMathOperator{\conv}{conv}
+\DeclareMathOperator{\aff}{aff}
+
+\begin{document}
+
+\maketitle
+\section{Introduction :}
+In this lab we learned that how we can use the scipy builtin functions to perform the partial factorization and expansion of the large complicated terms.
+\section{Results :}
+
+
+\textbf{Task 1 part 1 :}
+\begin{center}
+\includegraphics[scale=0.7]{Figure_1.png}
+\end{center}
+
+\textbf{Task 1 part 2 :}
+\begin{center}
+\includegraphics[scale=0.7]{Figure_2.png}
+\end{center}
+
+\textbf{Task 2 part 1 :}
+\begin{center}
+\includegraphics[scale=0.7]{Figure_3.png}
+\end{center}
+
+\textbf{Task 2 part 2 :}
+\begin{center}
+\includegraphics[scale=0.7]{Figure_4.png}
+\end{center}
+
+
+\section{Appendix :}\label{section-introduction}
+{\bf Task 1(Part 3) :}
+\begin{lstlisting}
+====== Part 1(Task 3) ======
+
+
+R = [ 0.5 -0.5 1. ] 
+P = [ 0. -4. -6.] 
+K = [] 
+Resides are 0.5 /(s+ -0.0 )+ -0.5 /(s+ 4.0 )+ 1.0 /(s+ 6.0 )
+\end{lstlisting}
+{\bf Task 1(Part 3) :}
+\begin{lstlisting}
+====== Part 2(Task 1) ======
+
+
+R = [ 1. +0.j -0.48557692+0.72836538j -0.48557692-0.72836538j
+-0.21461963+0.j 0.09288674-0.04765193j 0.09288674+0.04765193j] 
+P = [ 0. +0.j -3. +4.j -3. -4.j -10. +0.j -1.+10.j -1.-10.j] 
+K = [] 
+)
+\end{lstlisting}
+
+\section{Questions :}
+{\subsection{Question no 1 :} }
+
+\textbf{Answer :} 
+\\We can use use cosine method for a non-complex pole and it works because every trigonometric term can be expressed in the form of the exponential functions and vice versa, so we can express every term using cosine method.
+
+{\subsection{Question no 2 :} }
+\textbf{Answer :}
+\\Lab was well explained and understandable.
+\section{Conclusion :}
+\begin{itemize}
+\item In this lab we learned how to use residue function from the scipy library to perform partial fraction of a expression.
+\item I learned how the residue function to perform factorization of the non-quadratic expression.
+\item I learned how can we use the result of the residue(R,P,K lists) can be used to regenerate the factors 
+\end{itemize}
+\end{document}
