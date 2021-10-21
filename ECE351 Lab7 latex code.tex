@@ -1,0 +1,205 @@
+\documentclass[11pt]{article}
+\usepackage{amsmath, amssymb, amscd, amsthm, amsfonts}
+\usepackage{graphicx}
+\usepackage{pdfpages}
+\usepackage{hyperref}
+\usepackage{float}
+\usepackage{amsmath}
+\oddsidemargin 0pt
+\evensidemargin 0pt
+\marginparwidth 40pt
+\marginparsep 10pt
+\topmargin -20pt
+\headsep 10pt
+\textheight 8.7in
+\textwidth 6.65in
+\linespread{1.2}
+\usepackage[latin1]{inputenc}
+\title{Lab 7}
+\author{ECE 351-52}
+\author{Meshari Alhajeri}
+\date{10/21/2021}
+
+\usepackage{listings}
+\usepackage{xcolor}
+
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+\lstdefinestyle{mystyle}{
+backgroundcolor=\color{backcolour}, 
+commentstyle=\color{codegreen},
+keywordstyle=\color{magenta},
+numberstyle=\tiny\color{codegray},
+stringstyle=\color{codepurple},
+basicstyle=\ttfamily\footnotesize,
+breakatwhitespace=false, 
+breaklines=true, 
+captionpos=b, 
+keepspaces=true, 
+numbers=left, 
+numbersep=5pt, 
+showspaces=false, 
+showstringspaces=false,
+showtabs=false, 
+tabsize=2
+}
+
+
+\usepackage{steinmetz}
+\lstset{style=mystyle}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{conjecture}[theorem]{Conjecture}
+
+\newcommand{\rr}{\mathbb{R}}
+
+\newcommand{\al}{\alpha}
+\DeclareMathOperator{\conv}{conv}
+\DeclareMathOperator{\aff}{aff}
+
+\begin{document}
+
+\maketitle
+\section{Introduction :}
+In this lab we learned that how we can use the scipy builtin functions to perform the partial factorization and expansion of the large complicated terms.
+\section{Equations :}
+
+
+\textbf{Task 1 part 1 :}
+
+\begin{align*}
+\\ G(s) = \frac{\left(s+9\right)}{\left(s^2-6s-16\right)\left(s+4\right)} 
+\\ G(s) = \frac{s+9}{\left(s+2\right)\left(s-8\right)\left(s+4\right)}
+\\A(s) = \frac{\left(s+4\right)}{\left(s^2+4s+3\right)}
+\\A(s) = \frac{s+4}{\left(s+1\right)\left(s+3\right)}
+\\B(s) = s^2+26s+168
+\\B(s) = \left(s+12\right)\left(s+14\right)
+\end{align*}
+
+\textbf{Task 1 part 3 :}
+
+\begin{align*}
+Z(s) = A(s).X(s)
+\\ Y(s) = G(s).Z(s)
+\\ Y(s) = G(s).A(s).X(s)
+\\ \frac{Y(s)}{X(s)} = \frac{s+9}{\left(s+2\right)\left(s-8\right)\left(s+4\right)} \times \frac{s+4}{\left(s+1\right)\left(s+3\right)}
+\\ \frac{Y(s)}{X(s)} =\frac{s+9}{\left(s+1\right)\left(s+3\right)\left(s+2\right)\left(s-8\right)}
+\end{align*}
+
+\textbf{Task 1 Part 4 :}
+\\ As, all of the poles of the transfer function are not negative , in case of s-8, pole is +8. So, it will produce a $e^{-8}$ term which will cause system to become very unstable.
+
+\textbf{Task 1 Part 6 :}
+\\ Plot matches the expected result as time passes the response of the system increases exponentially and grows very large in small amount of time.
+
+
+
+\textbf{Task 1 part 3 :}
+
+\begin{align*}
+Z(s) &= A(s).X(s)
+\\ Y(s) &= \frac{G(s)}{1+G(s)\cdot B(s)}.Z(s)
+\\ Y(s) &= \frac{G(s)}{1+G(s)\cdot B(s)}.A(s)\cdot X(s)
+\\ \frac{Y(s)}{X(s)} &= \frac{G(s)\cdot A(s)}{1+G(s)\cdot B(s)}.
+\\\frac{Y(s)}{X(s)} &= \frac{\left(\left(\:\frac{s+9}{\left(s+2\right)\left(s-8\right)\left(s+4\right)}\right)\left(\:\frac{s+4}{\left(s+1\right)\left(s+3\right)}\right)\right)}{1+\left(\left(\:\frac{s+9}{\left(s+2\right)\left(s-8\right)\left(s+4\right)}\right)\left(\:\left(s+12\right)\left(s+14\right)\right)\right)}
+\\ \frac{Y(s)}{X(s)} &= \frac{\left(s+9\right)\left(s+4\right)}{\left(s+1\right)\left(s+3\right)\left(2s^3+33s^2+362s+1448\right)}
+\end{align*}
+
+\textbf{Task2 part 3 :}
+\\ As all of the poles of the transfer function are negative that means the function will gradually stabilize to a certain value as time passes.
+
+\textbf{Task2 part 5 :}
+\\ As expected, it is evident fro the graph that system response converges to 0.8 after some time and become stable.
+
+\section{Results :}
+\textbf{Task1 part 2 :}
+
+\begin{verbatim}
+For G(x)
+Value of z = [-9.]
+Value of p = [ 8. -4. -2.]
+Value of K = 1.0
+
+For A(x)
+Value of z = [-4.]
+Value of p = [-3. -1.]
+Value of K = 1.0
+
+For B(x)
+Value of z = []
+Value of p = []
+Value of K = [ 1. 26. 168.]
+\end{verbatim}
+
+
+
+\textbf{Task1 part 4 :}
+\begin{figure}[H]
+\centering
+\includegraphics[scale = 0.6]{Figure_1.png}
+\caption{Step response of the }
+\label{fig:my_label}
+\end{figure}
+
+
+
+
+\textbf{Task2 part 2 :}
+
+\begin{verbatim}
+Transfer function of the signal is = TransferFunctionContinuous( array([ 0.5, 6.5, 18. ]), array([1.0000e+00, 2.0500e+01, 2.5000e+02, 1.4975e+03, 3.4390e+03, 2.1720e+03]), )
+\end{verbatim}
+
+
+
+\textbf{Task1 part 4 :}
+\begin{figure}[H]
+\centering
+\includegraphics[scale = 0.6]{Figure_2.png}
+\caption{Step response of the }
+\label{fig:my_label}
+\end{figure}
+
+
+
+
+
+
+
+
+
+
+
+
+
+\section{Questions :}
+\textbf{Answer 1:}
+\\np.convolve() takes discrete time convolution of two arrays, our user defined function also takes discrete time convolution of two arrays so their output should be same.
+
+
+\textbf{Answer 2:}
+\\open loop has no feedback mechanism so the output is not controlled, but in case of closed loop control system the system has a feedback mechanism which constantly adjust the error in the response of the function which makes it a stable system.
+
+\textbf{Answer 3 :}
+\\ Scipy.signal.residue gives partial fraction expansion of the fraction, while Scipy.signal.tf2zpk gives poles of the transfer function. 
+
+
+\textbf{Answer 4 :}
+\\ Open loop system can be stable in some situation especially in the simple system with simple input because they don't need much of feedback response in those case.
+\\ Closed loop system can be unstable in some cases, the presence of feedback can cause the closed-loop system to become unstable, as in the case of higher order
+.
+
+{\subsection{Question no 5 :} }
+\textbf{Answer :}
+\\Lab was well explained and understandable.
+\section{Conclusion :}
+\begin{itemize}
+\item In this lab we learned the difference between the closed loop and open loop control system .
+\item I learned how to check for the stability of the function.
+\item How to check the step response of the function using scipy signal API.
+\item I learned how to perform polynomial multiplication use convolve() method to convolve two arrays. 
+\end{itemize}
+\end{document}
