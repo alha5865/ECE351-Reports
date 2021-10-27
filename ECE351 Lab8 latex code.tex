@@ -1,0 +1,62 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{float}
+\title{Lab 8}
+\author{ECE 351-52}
+\author{Meshari Alhajeri}
+\date{10/26/2021}
+
+\begin{document}
+
+\maketitle
+
+\section{Introduction:}
+In this lab we will learn how can we use python to find different values of $a_k$ , $b_k$. and how to add all these different equations to get the desired output.
+\section{Equations:}
+\subsection{Task 1}
+As the given square is a odd function so it will have only $b_k$ values it's $a_0$ and $a_k$ value will be zero.
+$$a_0 = 0$$
+$$a_k = 0$$
+$$b_k = \frac{2}{k \pi}\left(1- \cos (k \pi) \right)$$
+$$x(t) = \frac{1}{2}a_0 \sum_{k=1}^{N}\left( a_k \cos(\omega_0 t ) + b_k \sin(\omega_0 t ) \right)$$
+$$x(t) = \frac{2}{k \pi}\left(1- \cos (k \pi \right) \sin(\omega_0 t ) $$
+
+\section{Results: }
+\subsection{Task 2:}
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.7]{Figure_1.png}
+
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.7]{Figure_2.png}
+
+\end{figure}
+
+\section{Questions :}
+\textbf{Question no 1 :}
+\\$x(t)$ is a odd function because it is the inverted version of the function function on the left side of the axis, also, because it's $a_0$ and $a_k$ is zero.
+\\ \textbf{Question no 2 :}
+\\Value of the $a_1,a_2,a_3$ is equal to zero because the function is the odd function and the value of the $a_0$ and $a_k$ is zero.
+\\ \textbf{Question no 3 :}
+\\As the value of the n increases the shape of the plotted function becomes more and more alike to the square function.
+\\ \textbf{Question no 4 :}
+\\ As, the no of n increases no of sine waves increases thus making it more similar to the desired function.
+\\ \textbf{Question no 5 :}
+\\ Lab manual was well explained and easily comprehend able.
+
+\section{Conclusion :}
+\begin{itemize}
+\item In this lab we learned how we can use Fourier series to implement any function.
+\item We learned how to take n summation of the Fourier series and what difference does occur by changing no of iterations.
+\item how to use python to iteratively sum up terms for Fourier transform.
+\end{itemize} 
+\section{Appendix :}
+\begin{verbatim}
+Value of b for the first a0 is 0, a1 is 0, three bk is [0.00000000e+00 1.27272676e+00 1.01750234e-06]
+\end{verbatim}
+
+\end{document}
