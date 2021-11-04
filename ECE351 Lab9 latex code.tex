@@ -1,0 +1,99 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{float}
+\title{Lab 9}
+\author{ECE 351-52}
+\author{Meshari Alhajeri}
+\date{11/3/2021}
+
+\begin{document}
+
+\maketitle
+
+\section{Introduction}
+In this lab we will learn how to take fast Fourier transform using fft command in python. In this lab we will learn how to remove extra noise from the final output of the Fourier transform.
+\section{Results}
+
+\textbf{Task 1 :}
+\begin{figure}[H]
+\centering
+\includegraphics[scale = 0.6]{-4.png}
+\caption{Caption}
+\label{fig:my_label}
+\end{figure}
+
+\textbf{Task 2 :}
+\begin{figure}[H]
+\centering
+\includegraphics[scale = 0.6]{-5.png}
+\caption{Caption}
+\label{fig:my_label}
+\end{figure}
+
+\textbf{Task 3 :}
+\begin{figure}[H]
+\centering
+\includegraphics[scale = 0.6]{-6.png}
+\caption{Caption}
+\label{fig:my_label}
+\end{figure}
+
+\textbf{Task 4 :}
+\begin{figure}[H]
+\centering
+\includegraphics[scale = 0.6]{-7.png}
+\caption{Caption}
+\label{fig:my_label}
+\end{figure}
+
+\textbf{Task 5 :}
+\begin{figure}[H]
+\centering
+\includegraphics[scale = 0.6]{-3.png}
+\caption{Caption}
+\label{fig:my_label}
+\end{figure}
+\textbf{Task 6 :}
+\begin{figure}[H]
+\centering
+\includegraphics[scale = 0.6]{-2.png}
+\caption{Caption}
+\label{fig:my_label}
+\end{figure}
+
+\textbf{Task 7 :}
+\begin{figure}[H]
+\centering
+\includegraphics[scale = 0.6]{-1.png}
+\caption{Caption}
+\label{fig:my_label}
+\end{figure}
+
+
+
+\section{Questions :}
+\textbf{Answer 1 :}
+\\As numbers of samples increases the spacing between the points increases, the points are captured more accurately. As, the sampling frequency increases, the no of samples the no of points increase and vice versa for the decreasing case.
+\\ \textbf{Answer 2 :}
+\\ Eliminating small phase magnitude reduces the noise in the plot .
+\\ \textbf{Answer 3 :}
+\\ \begin{large}
+
+$$ \mathcal{F}\{cos(2\pi f_0 t) \} = \frac{1}{2} \delta(f - f_0) + \delta(f + f_0) $$
+
+
+
+\end{large}
+
+from Task 1 and 2 we found out that the response of the sine and the cosine gives us two impulses at equal distance from the origin which validates that our plot from the task 1 and 2 is right.
+
+\section{Conclusion :}
+In this lab we learned :
+\begin{itemize}
+\item how to take fft of a function using python
+\item how to use step command to generate discrete time graph of a function
+\item how to use find fft of the user generated function
+\end{itemize}
+
+\end{document}
