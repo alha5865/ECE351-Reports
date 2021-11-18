@@ -1,0 +1,93 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\title{Lab 11}
+\author{ECE 351-52}
+\author{Meshari Alhajeri}
+\date{10/16/2021}
+
+\begin{document}
+
+\maketitle
+
+\section{Introduction}
+In this lab we will learn how to find Z-transform of a system, how to find system equation by taking inverse Z transform, how t find and plot the poles and zeros of the system. How to use the freqz function to plot the magnitude and phase bode plot. 
+
+
+
+
+\section{Methodology :}
+\textbf{Task 1 :}
+$$ y[k] = 2x[k]-40x[k-1]+10y[k-1]-16[k-1]-16y[k-2] $$
+Now taking Z transform of the whole equation :
+\begin{align*}
+Y(z) & = 2X(z)-40X(z)z^{-1}+10Y(z)z^{-1}-16Y(z)z^{-2}
+\\ Y(z)\{1-10z^{-1}+16z^{-2} \} & = X(z)\{2-40z^{-1} \}
+\frac{Y(z)}{X(z)} &=
+\end{align*}
+
+Multiplying both sides of the equation by $x^2$
+\begin{align*}
+\frac{Y(z)}{X(z)} &=\frac{2z^{2}-40z}{z^2-10z+16}
+\end{align*}
+
+\textbf{Task 2 :}
+
+\begin{align*}
+\frac{2z^2-40z}{z^2-10z+16} &= 2+\frac{-20z-32}{z^2-10z+16}
+\\ 2+\frac{-20z-32}{z^2-10z+16} &= 2+\frac{12}{z-2}-\frac{32}{z-8}
+\end{align*}
+Now taking inverse Z-transform :
+$$3\times 2^{2n} - 4\times 2^{3n} $$
+
+
+
+
+
+
+
+
+
+
+\section{Results}
+
+\textbf{Task 4 :}
+\begin{figure}[H]
+\centering
+\includegraphics[width = 300 px]{01.png}
+\label{fig:my_label}
+\end{figure}
+\textbf{Task 5 :}
+\begin{figure}[H]
+\centering
+\includegraphics[width = 300 px]{02.png}
+\label{fig:my_label}
+\end{figure}
+
+
+
+.
+
+\section{Appendix :}
+\textbf{Printed output from Task 3 :}
+\begin{verbatim}
+The result of the residuez function is : [ 6. -4.], [2. 8.], []
+\end{verbatim}
+
+\section{Conclusion :}
+In this lab we learned :
+\begin{itemize}
+\item how to find Z transform of a system.
+\item how to do partial fraction and then find inverse Z- transform to find the signal in time domain.
+\item Plot the magnitude and phase plot of the system.
+\item Plot the poles and the zeros of the system on the graph.
+\end{itemize}
+
+\section{Questions :}
+\textbf{Answer 1 :}
+Looking at the plot of the pole and the zeros all the poles are on the left so the system is unstable.
+
+\end{document}
