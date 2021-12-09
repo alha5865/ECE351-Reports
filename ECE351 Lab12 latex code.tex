@@ -1,0 +1,403 @@
+\documentclass[a4paper,11pt]{article}
+
+
+
+
+
+
+\usepackage{pgf}
+\usepackage{pgfpages}
+
+\pgfpagesdeclarelayout{boxed}
+{
+\edef\pgfpageoptionborder{0pt}
+}
+{
+\pgfpagesphysicalpageoptions
+{%
+logical pages=1,%
+}
+\pgfpageslogicalpageoptions{1}
+{
+border code=\pgfsetlinewidth{2pt}\pgfstroke,%
+border shrink=\pgfpageoptionborder,%
+resized width=.95\pgfphysicalwidth,%
+resized height=.95\pgfphysicalheight,%
+center=\pgfpoint{.5\pgfphysicalwidth}{.5\pgfphysicalheight}%
+}%
+}
+
+\pgfpagesuselayout{boxed}
+
+
+
+
+
+
+
+
+\usepackage{float}
+
+
+\usepackage[resetfonts]{cmap}
+\usepackage{fancyvrb}
+\begin{VerbatimOut}{ot1.cmap}
+
+/CIDInit /ProcSet findresource begin
+12 dict begin
+begincmap
+/CIDSystemInfo
+<< /Registry (TeX)
+/Ordering (OT1)
+/Supplement 0
+>> def
+/CMapName /TeX-OT1-0 def
+/CMapType 2 def
+1 begincodespacerange
+<00> <7F>
+endcodespacerange
+8 beginbfrange
+<00> <01> <0000>
+<09> <0A> <0000>
+<23> <26> <0000>
+<28> <3B> <0000>
+<3F> <5B> <0000>
+<5D> <5E> <0000>
+<61> <7A> <0000>
+<7B> <7C> <0000>
+endbfrange
+40 beginbfchar
+<02> <0000>
+<03> <0000>
+<04> <0000>
+<05> <0000>
+<06> <0000>
+<07> <0000>
+<08> <0000>
+<0B> <0000>
+<0C> <0000>
+<0D> <0000>
+<0E> <0000>
+<0F> <0000>
+<10> <0000>
+<11> <0000>
+<12> <0000>
+<13> <0000>
+<14> <0000>
+<15> <0000>
+<16> <0000>
+<17> <0000>
+<18> <0000>
+<19> <0000>
+<1A> <0000>
+<1B> <0000>
+<1C> <0000>
+<1D> <0000>
+<1E> <0000>
+<1F> <0000>
+<21> <0000>
+<22> <0000>
+<27> <0000>
+<3C> <0000>
+<3D> <0000>
+<3E> <0000>
+<5C> <0000>
+<5F> <0000>
+<60> <0000>
+<7D> <0000>
+<7E> <0000>
+<7F> <0000>
+endbfchar
+endcmap
+CMapName currentdict /CMap defineresource pop
+end
+end
+\end{VerbatimOut}
+
+\usepackage{lipsum}
+
+
+
+
+
+
+
+
+
+
+
+
+
+\usepackage[margin=1.2in]{geometry} 
+
+\usepackage{amsfonts}
+\renewcommand*\familydefault{\sfdefault}
+
+\usepackage[cmex10]{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\newtheorem{mydef}{Definition}
+\newtheorem{mytherm}{Theorem}
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+\renewcommand{\algorithmicrequire}{\textbf{Input:}}
+\renewcommand{\algorithmicensure}{\textbf{Output:}}
+\usepackage[utf8]{inputenc}
+\usepackage{listings}
+\usepackage{xcolor}
+
+\usepackage[framed,numbered,autolinebreaks,useliterate]{mcode}
+
+\definecolor{codegreen}{rgb}{0,0.6,0.1}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codeblue}{rgb}{0.10,0.00,1.00}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{1.0,1.0,1.0}
+
+\lstdefinestyle{mystyle}{
+backgroundcolor=\color{backcolour}, 
+commentstyle=\color{codegreen},
+keywordstyle=\color{codeblue},
+numberstyle=\tiny\color{codegray},
+stringstyle=\color{codepurple},
+basicstyle=\ttfamily\footnotesize,
+breakatwhitespace=false, 
+breaklines=true, 
+captionpos=b, 
+keepspaces=true, 
+numbers=left, 
+numbersep=5pt, 
+showspaces=false, 
+showstringspaces=false,
+showtabs=false, 
+tabsize=2,
+frame=none
+}
+\lstset{style=mystyle}
+
+\usepackage{graphicx}
+\usepackage{subfigure}
+\usepackage{caption}
+\usepackage{lipsum}
+
+\usepackage{multirow}
+\usepackage{rotating}
+\usepackage{makecell}
+\usepackage{booktabs}
+
+\usepackage{enumitem}
+\newlist{abbrv}{itemize}{1}
+\setlist[abbrv,1]{label=,labelwidth=1in,align=parleft,itemsep=0.1\baselineskip,leftmargin=!}
+
+
+\usepackage[hidelinks]{hyperref}
+\usepackage[comma,authoryear]{natbib}
+\renewcommand{\bibname}{References} 
+
+\usepackage[toc]{appendix}
+\begin{document}
+
+\captionsetup[figure]{margin=1.5cm,font=small,name={Figure},labelsep=colon}
+\captionsetup[table]{margin=1.5cm,font=small,name={Table},labelsep=colon}
+
+
+
+
+\begin{titlepage} 
+\begin{center}
+
+{\Large Department of Electrical Engineering}
+\\[2cm]
+{\Large ECE 351-52}\\[2cm]
+
+
+\rule{\linewidth}{2px}
+
+\linespread{1.2}\huge {
+
+Final Project Report
+\\ Lab 12: Filter Design
+\\ 
+
+}
+\rule{\linewidth}{2px}
+\linespread{1}~\\[2cm]
+
+{\Large 
+
+Student Name: Meshari Alhajeri
+
+}
+
+
+
+
+\vfill
+{\large Lab Project }\\[0.3cm] 
+
+
+
+\today 
+\end{center}
+\end{titlepage}
+
+
+
+\newpage
+\thispagestyle{empty}
+
+
+
+\section{Abstract :}
+In this project, I filter out an input signal that is gathered by the sensor signal of the positioning system for the landing of their aircraft through an aircraft firm. The location signal included inside an AC voltage waveform is in the range of 1.8kHz to 2.0kHz, according to the information we were given. We also know that the positioning system shares a ground connection with a switching amplifier, implying that noise at higher frequencies will be considerable. The input signal is further affected by low frequency noise caused by minor movements from the building's ventilation system. There's also the potential that there are additional sources of noise that haven't been identified yet.
+
+\section{Equations \& Calculations: }
+The input signal is a noisy signal that contains the positioning data as well as some high and low frequency noise, we need to filter out the high and low frequency noise and dampen their amplitude to minimum. In order to do that we need a Band stop filter. A band stop filter is a filter that allows only certain frequencies to pass through and attenuate the rest of the frequencies
+\begin{align*}
+H(s) = \frac{\frac{R}{L}}{s^2+\left(\frac{R}{L}\right)+\frac{1}{LC}}
+\end{align*}
+let $R = 2*\pi *1000$ and then calculate the value of C using $f_c = \frac{1}{2\pi RC}$ value of C comes out to be $1.58\times 10^{-8} $
+\\ Similarly, we can calculate the value of the L using $f_c = \frac{L}{2\pi R}$, So, L comes out to be 0.4166 H
+
+
+\section{Analysis:}
+\begin{figure}[H]
+\centering
+\fbox{\includegraphics[width = 300px]{01.png}}
+\label{fig:my_label}
+\caption{Final circuit}
+\end{figure}
+In this circuit we will be taking voltage output across the resistor so we will use capacitor to block the lower frequencies and capacitor to block higher frequencies
+\\In order to analyze we will be using fast Fourier transform to analyze the frequency component of the circuit since frequencies of the position signal varies from 1.8 to 2 KHz. So, we will set our cutoff frequencies such that filter gives maximum output in this range.
+In our case I have set the cutoff frequency on 1.8 KHz and 2.0 kHz. and we will treat the signal with frequencies lower than 1.8kHz and higher than 2.0kHz as noise 
+
+
+\section{Results: }
+
+\begin{figure}[H]
+\centering
+\fbox{\includegraphics[width = 300px]{14.png}}
+\label{fig:my_label}
+\caption{Input Signal}
+\end{figure}
+
+
+\begin{figure}[H]
+\centering
+\fbox{\includegraphics[width = 300px]{02.png}}
+\label{fig:my_label}
+\caption{Input Signal}
+\end{figure}
+
+
+
+
+\begin{figure}[H]
+\centering
+\fbox{\includegraphics[width = 300px]{03.png}}
+\label{fig:my_label}
+\caption{Output}
+\end{figure}
+
+
+
+\begin{figure}[H]
+\centering
+\fbox{\includegraphics[width = 300px]{04.png}}
+\label{fig:my_label}
+\caption{Output}
+\end{figure}
+
+
+
+\begin{figure}[H]
+\centering
+\fbox{\includegraphics[width = 300px]{05.png}}
+\label{fig:my_label}
+\caption{Output}
+\end{figure}
+
+
+
+\begin{figure}[H]
+\centering
+\fbox{\includegraphics[width = 300px]{06.png}}
+\label{fig:my_label}
+\caption{Output}
+\end{figure}
+
+
+\begin{figure}[H]
+\centering
+\fbox{\includegraphics[width = 300px]{07.png}}
+\label{fig:my_label}
+\caption{Output}
+\end{figure}
+
+
+
+
+
+\begin{figure}[H]
+\centering
+\fbox{\includegraphics[width = 300px]{08.png}}
+\label{fig:my_label}
+\caption{Output}
+\end{figure}
+
+
+
+\begin{figure}[H]
+\centering
+\fbox{\includegraphics[width = 300px]{09.png}}
+\label{fig:my_label}
+\caption{Output}
+\end{figure}
+
+
+\begin{figure}[H]
+\centering
+\fbox{\includegraphics[width = 300px]{10.png}}
+\label{fig:my_label}
+\caption{Output}
+\end{figure}
+
+
+\begin{figure}[H]
+\centering
+\fbox{\includegraphics[width = 300px]{11.png}}
+\label{fig:my_label}
+\caption{Output}
+\end{figure}
+
+
+
+\begin{figure}[H]
+\centering
+\fbox{\includegraphics[width = 300px]{12.png}}
+\label{fig:my_label}
+\caption{Output}
+\end{figure}
+
+
+
+\begin{figure}[H]
+\centering
+\fbox{\includegraphics[width = 300px]{13.png}}
+\label{fig:my_label}
+\caption{Output}
+\end{figure}
+
+
+
+\section{Questions:}
+\textbf{Answer 1:}
+\\Yes, I wanted to learn about how to process the digital signal using python, by this course I learned how to do digital signal processing in python
+\\ \textbf{Answer 2:}
+\\ Ok, I will fill the survey form.
+\\ \textbf{Answer 3:} 
+\\Thank you so much dear Kate.
+
+\section{Conclusion:}
+In this project we worked on a real life problem, we worked on getting the important signal frequencies that can be obtained by filtering out the unwanted signals. We learned how can we build a analog circuit to get only a certain band of useful frequencies that can be used for further analysis.
+\end{document}
